@@ -1,25 +1,7 @@
 <!--main-->
 <main class="col-12 col-xl-9 shadow-sm">
 
-	<!--Sort-->
-	<section class="row border-bottom m-4 collapse d-xl-flex" id="sortingCollapse" >
-
-		<div class="col-12 col-xl-6">
-			<p>مرتب سازی براساس: </p>
-		</div>
-
-		<?php dynamic_sidebar('Wore Sort'); ?>
-
-		<div class="col-12 col-xl-6 text-xl-start">
-			<ul class="list-unstyled">
-			<li class="mb-2 d-xl-inline me-2"><a href="#" class="text-reset text-decoration-none">جدیدترین</a></li>
-			<li class="mb-2 d-xl-inline me-2"><a href="#" class="text-reset text-decoration-none">کم به زیاد</a></li>
-			<li class="mb-2 d-xl-inline me-2"><a href="#" class="text-reset text-decoration-none">زیاد به کم</a></li>
-			<li class="mb-2 d-xl-inline me-2"><a href="#" class="text-reset text-decoration-none">پربازدید ترین</a></li>
-			</ul>             
-		</div>
-
-	</section>
+	<?php dynamic_sidebar('Wore Sort'); ?>
 
 	<!--List-->
 	<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 justify-content-center p-4">
