@@ -1,0 +1,31 @@
+/*
+Theme Name: HotelYaban
+Theme URI: https://hotelyaban.com/
+Author: Hotel Yaban
+Author URI: https://hotelyaban.com/
+Description: HotelYaban wordpress theme
+Version: 1
+Requires at least: 5.0
+Tested up to: 6.0
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: hotelyaban
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@font-face {
+    font-family: 'peyda';
+    src: url('assets/fonts/peyda.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'iranyekan';
+	font-style: normal;
+	font-weight: 300;
+	src: url('assets/fonts/iranyekan/eot/iranyekanweblightfanum.eot');
+	src: url('assets/fonts/iranyekan/eot/iranyekanweblightfanum.eot?#iefix') format('embedded-opentype'), 
+		 url('assets/fonts/iranyekan/woff/iranyekanweblightfanum.woff') format('woff'),  
+		 url('assets/fonts/iranyekan/ttf/iranyekanweblightfanum.ttf') format('truetype');
+}
