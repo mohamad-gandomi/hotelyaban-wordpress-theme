@@ -1,4 +1,9 @@
 jQuery(function($){
+
+  /* -------------------------------------------------------------------------- */
+  /*	AJAX PRODUCTS & CATEGORIES SEARCH
+  /* -------------------------------------------------------------------------- */
+
     var sendRequest = true
     $('#searchInput').on('keyup', function() {
 
@@ -43,4 +48,40 @@ jQuery(function($){
             }
         });
     })
+
+  /* -------------------------------------------------------------------------- */
+  /*	LOADMORE HOTELS BUTTON
+  /* -------------------------------------------------------------------------- */
+
+    $('#load_more_btn').on('click', function(){
+        var url = new URL(window.location.href)
+        window.queryParams = [];
+        url.searchParams.forEach(function(value,key){
+            window.queryParams[key] = value
+        })
+        $.ajax({
+            type: 'POST',
+            dataType: 'html',
+            url: global.ajaxUrl,
+            data: {
+                'action': 'load_more',
+                'term_id': $('#load_more_btn').data('term'),
+                'page_number': $('#load_more_btn').data('page'),
+                ...window.queryParams,
+            },
+            beforeSend: function() {
+                $("#load_more_btn").html('در حال بارگذاری...');
+            },
+            success: function(response) {
+                $("#loaderDiv").show();
+                $('#load_more_btn').data('page', $('#load_more_btn').data('page')+1 );
+                $("#load_more_btn").html('اطلاعات بیشتر');
+                $('#listContainer').append(response);
+                console.log(response)
+            }
+    });
+
+    });
+
+
 })

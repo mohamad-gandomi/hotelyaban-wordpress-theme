@@ -5,8 +5,8 @@ function wpdocs_theme_name_scripts() {
 	wp_enqueue_style( 'style.css', get_template_directory_uri() . '/style.css', array());
 	wp_enqueue_style( 'icomoon.css', get_template_directory_uri() . '/assets/fonts/icomoon/icomoon.css', array());
 
-	wp_enqueue_script( 'search', get_template_directory_uri() . '/assets/js/search.js', array('jquery'), true );
-	wp_localize_script( 'search', 'global',
+	wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), true );
+	wp_localize_script( 'main', 'global',
 		array(
 			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
 			'ajaxNonce' => wp_create_nonce( "hy_ajax_search_nonce" )
