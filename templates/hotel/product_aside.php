@@ -4,7 +4,7 @@
 	<input type="text" class="form-control filter" placeholder="جستجو کنید" aria-label="Recipient's username" aria-describedby="button-addon2">
 </div>
 <!--Image-->
-<div class="col-12">
+<div class="col-12" style="position: sticky;top: 45px;">
 	<figure>
 		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/sidebar-hotel-desktop.webp" class="img-fluid" alt="">
 	</figure>
