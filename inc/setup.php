@@ -8,7 +8,6 @@ add_action( 'after_setup_theme', function(){
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
-	add_theme_support( 'customize-selective-refresh-widgets' );
 	add_theme_support('woocommerce');
 
 	register_nav_menus(
@@ -56,6 +55,8 @@ add_filter( 'nav_menu_link_attributes', function( $atts, $item, $args ) {
 /* Register widget area (filter sidebar) */	
 add_action( 'widgets_init', function() {
 
+	/**List's Sidebars */
+
     register_sidebar( array(
         'name'          => __( 'Filter Sidebar', 'hotelyaban' ),
         'id'            => 'filterSidebar',
@@ -65,4 +66,57 @@ add_action( 'widgets_init', function() {
         'name'          => __( 'Wore Sort', 'hotelyaban' ),
         'id'            => 'woreSort',
     ) );
+
+	/**Footer's Sidebars */
+
+	register_sidebar( array(
+		'name'          => 'Footer area one',
+		'id'            => 'footer_area_one',
+		'description'   => 'This widget area discription',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h6>',
+		'after_title'   => '</h6>',
+	));
+
+	register_sidebar( array(
+		'name'          => 'Footer area two',
+		'id'            => 'footer_area_two',
+		'description'   => 'This widget area discription',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h6>',
+		'after_title'   => '</h6>',
+	));
+	
+	register_sidebar( array(
+		'name'          => 'Footer area three',
+		'id'            => 'footer_area_three',
+		'description'   => 'This widget area discription',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h6>',
+		'after_title'   => '</h6>',
+	));
+	
+	register_sidebar( array(
+		'name'          => 'Footer area four',
+		'id'            => 'footer_area_four',
+		'description'   => 'This widget area discription',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h6>',
+		'after_title'   => '</h6>',
+	));
+
+	register_sidebar( array(
+		'name'          => 'Footer area five',
+		'id'            => 'footer_area_five',
+		'description'   => 'This widget area discription',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h6>',
+		'after_title'   => '</h6>',
+	));
+
 });

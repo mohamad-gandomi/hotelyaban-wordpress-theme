@@ -1,40 +1,27 @@
     <footer class="bg-color-gamma fs-8 text-light">
         <div class="container">
             <div class="py-5 row">
-                <div class="col-12 col-md-4 mb-4 mb-md-0 text-center text-md-end"> <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hotel_yaban_logo.svg" alt="Hotel Yaban logo" class="footer-brand img-fluid mb-3">
-                    <p>سامانه رزرو آنلاین هتل یابان با گردهم آوردن کارشناسان متخصص و مجرب در زمینه گردشگری و همچنین IT تلاش کرده تا بستری امن و مطمئن برای مسافرین ایجاد کند تا بتوانند در سریعترین زمان بهترین و مناسبترین هتل را برای خود پیدا کنند و آنرا با
-                        کمترین قیمت و بیشترین تخفیف رزرو کنند.</p>
-                </div>
-                <div class="col-12 col-md-2 mb-4 mb-md-0 text-center text-md-end">
-                    <h6 class="font-weight-bold mb-4">هتل‌های مشهد</h6>
-                    <ul class="list-unstyled mb-6 mb-lg-0 mb-md-8">
-                        <li class="mb-2"> <a href="#!" class="text-decoration-none text-reset"> هتل‌های پنج ستاره مشهد </a> </li>
-                        <li class="mb-2"> <a href="#!" class="text-decoration-none text-reset"> هتل‌های چهار ستاره مشهد </a> </li>
-                        <li class="mb-2"> <a href="#!" class="text-decoration-none text-reset"> هتل‌های سه ستاره مشهد </a> </li>
-                        <li class="mb-2"> <a href="#!" class="text-decoration-none text-reset"> هتل‌های دو ستاره مشهد </a> </li>
-                        <li class="mb-2"> <a href="#!" class="text-decoration-none text-reset"> هتل‌های یک ستاره مشهد </a> </li>
-                        <li> <a href="#!" class="text-decoration-none text-reset"> هتل آپارتمان‌های مشهد </a> </li>
-                    </ul>
-                </div>
-                <div class="col-12 col-md-2 mb-4 mb-md-0 text-center text-md-end">
-                    <h6 class="font-weight-bold mb-4">تاپ‌ ترین هتل‌های مشهد</h6>
-                    <ul class="list-unstyled mb-6 mb-lg-0 mb-md-8">
-                        <li class="mb-2"> <a href="#!" class="text-decoration-none text-reset"> هتل درویشی مشهد </a> </li>
-                        <li class="mb-2"> <a href="#!" class="text-decoration-none text-reset"> هتل بین المللی قصر مشهد </a> </li>
-                        <li class="mb-2"> <a href="#!" class="text-decoration-none text-reset"> هتل قصر طلایی مشهد </a> </li>
-                        <li class="mb-2"> <a href="#!" class="text-decoration-none text-reset"> هتل مدینه الرضا مشهد </a> </li>
-                        <li> <a href="#!" class="text-decoration-none text-reset"> هتل الماس ۲ مشهد </a> </li>
-                    </ul>
-                </div>
-                <div class="col-12 col-md-2 mb-4 mb-md-0 text-center text-md-end">
-                    <h6 class="font-weight-bold mb-4">پشتیبانی آنلاین</h6>
-                    <ul class="list-inline list-social list-unstyled mb-6 mb-md-0">
-                        <li class="list-inline-item list-social-item"> <a href="#!" class="fs-4 text-decoration-none text-reset"> <i class="icon-telegram"></i> </a> </li>
-                        <li class="list-inline-item list-social-item me-3"> <a href="#!" class="fs-4 text-decoration-none text-reset"> <i class="icon-whatsapp"></i> </a> </li>
-                        <li class="list-inline-item list-social-item me-3"> <a href="#!" class="fs-4 text-decoration-none text-reset"> <i class="icon-telephone"></i> </a> </li>
-                    </ul>
-                </div>
-                <div class="col-12 col-md-2 text-center text-md-end"> <img src="<?php echo get_template_directory_uri(); ?>/assets/img/enamad_icon.webp" alt="" class="img-fluid"> </div>
+
+                <section class="col-12 col-md-4 mb-4 mb-md-0 text-center text-md-end">
+                    <?php dynamic_sidebar( 'footer_area_one' ); ?>
+                </section>
+
+                <section class="col-12 col-md-2 mb-4 mb-md-0 text-center text-md-end">
+                    <?php dynamic_sidebar( 'footer_area_two' ); ?>
+                </section>
+
+                <section class="col-12 col-md-2 mb-4 mb-md-0 text-center text-md-end">
+                    <?php dynamic_sidebar( 'footer_area_three' ); ?>
+                </section>
+
+                <section class="col-12 col-md-2 text-center text-md-end">
+                    <?php dynamic_sidebar( 'footer_area_four' ); ?>
+                </section>
+
+                <section class="col-12 col-md-2 text-center text-md-end">
+                    <?php dynamic_sidebar( 'footer_area_five' ); ?>
+                </section>
+                
             </div>
         </div>
     </footer>
