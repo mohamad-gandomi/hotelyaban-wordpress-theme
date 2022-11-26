@@ -35,6 +35,7 @@
 				if ( $recommended_hotels->have_posts() ) {
 					while ( $recommended_hotels->have_posts() ) : $recommended_hotels->the_post();
 						$hotel = wore_get_hotel(get_the_id());
+						$hotel_categories = $hotel->get_hotel_categories();
 						?>
 						<!-- Card -->
 						<div class="p-3">
@@ -58,16 +59,21 @@
 								<?php endif; ?>
 
 								<!-- Hotel Star Classification -->
-								<?php if($hotel->get_hotel_category_stars()): ?>
-								<span class="position-absolute bottom-0 me-2 lead fs-4">
-									<?php
-										$count = (int)$hotel->get_hotel_category_stars()[0]->description;
-										for ($x = 0; $x < $count; $x++) {
-											echo '<i class="icon-star text-color-beta"></i>';
+								<?php 
+								if ($hotel_categories) {
+									echo '<span class="position-absolute bottom-0 me-2 lead fs-4">';
+										foreach ( $hotel_categories as $hotel_category ) {
+											$category_type = $hotel_category->get_data('type');
+											if ( 'degree' == $category_type ) {
+												$count = $hotel_category->get_data('degree');
+												for ($x = 0; $x < $count; $x++) {
+													echo '<i class="icon-star text-color-beta"></i>';
+												}
+											}
 										}
-									?>
-								</span>
-								<?php endif; ?>
+									echo '<span>';
+								}
+								?>
 
 							</div>
 
