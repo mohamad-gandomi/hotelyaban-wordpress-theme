@@ -8,6 +8,7 @@
 		<?php if ( have_posts() ) : ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php $hotel = wore_get_hotel(get_the_id()); ?>
+				<?php $hotel_categories = $hotel->get_hotel_categories(); ?>
 				<!-- Card -->
 				<div class="p-3">
 					<div class="card shadow-sm">
@@ -30,16 +31,21 @@
 							<?php endif; ?>
 
 							<!-- Hotel Star Classification -->
-							<?php if($hotel->get_hotel_category_stars()): ?>
-							<span class="position-absolute bottom-0 end-0 me-2 lead fs-4">
-								<?php
-									$count = (int)$hotel->get_hotel_category_stars()[0]->description;
-									for ($x = 0; $x < $count; $x++) {
-										echo '<i class="icon-star text-color-beta"></i>';
-									}
-								?>
-							</span>
-							<?php endif; ?>
+							<?php 
+								if ($hotel_categories) {
+									echo '<span class="position-absolute bottom-0 end-0 me-2 lead fs-4">';
+										foreach ( $hotel_categories as $hotel_category ) {
+											$category_type = $hotel_category->get_data('type');
+											if ( 'degree' == $category_type ) {
+												$count = $hotel_category->get_data('degree');
+												for ($x = 0; $x < $count; $x++) {
+													echo '<i class="icon-star text-color-beta"></i>';
+												}
+											}
+										}
+									echo '<span>';
+								}
+							?>
 
 						</div>
 
