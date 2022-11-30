@@ -31,20 +31,23 @@
 							<?php endif; ?>
 
 							<!-- Hotel Star Classification -->
-							<?php 
-								if ($hotel_categories) {
-									echo '<span class="position-absolute bottom-0 end-0 me-2 lead fs-4">';
-										foreach ( $hotel_categories as $hotel_category ) {
-											$category_type = $hotel_category->get_data('type');
-											if ( 'degree' == $category_type ) {
-												$count = $hotel_category->get_data('degree');
-												for ($x = 0; $x < $count; $x++) {
-													echo '<i class="icon-star text-color-beta"></i>';
-												}
-											}
+
+							<?php
+							$hotel_category_degrees = wore_get_hotel_degree_categories($hotel);
+							if(!empty($hotel_category_degrees)): 
+								foreach($hotel_category_degrees as $hotel_category_degree):
+								?>
+								<span class="hotel-category-degree position-absolute bottom-0 end-0 me-2 lead fs-4">
+									<?php
+										$count = (int)$hotel_category_degree['degree'];
+										for ($x = 0; $x < $count; $x++) {
+											echo '<i class="icon-star text-color-beta"></i>';
 										}
-									echo '<span>';
-								}
+									?>
+								</span>
+								<?php
+								endforeach;
+							endif; 
 							?>
 
 						</div>
