@@ -21,7 +21,7 @@
       <div class="container py-4 py-md-4">
 
         <!-- Brand -->
-        <a class="navbar-brand ms-3" href="">
+        <a class="navbar-brand ms-3" href="<?php echo get_site_url(); ?>">
             <?php
                 if ( has_custom_logo() ) {
                     $custom_logo_id = get_theme_mod( 'custom_logo' );
