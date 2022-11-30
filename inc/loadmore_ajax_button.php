@@ -50,18 +50,23 @@ function load_more_callback() {
                         <img src="<?php echo get_template_directory_uri()  ?>/assets/img/hotel_picture.jpg" class="card-img-top" alt="">
                     <?php endif; ?>
 
-                    <!-- Hotel Star Classification -->
-                    <?php if($hotel->get_hotel_category_stars()): ?>
-                    <span class="position-absolute bottom-0 end-0 me-2 lead fs-4">
-                        <?php
-                            $count = (int)$hotel->get_hotel_category_stars()[0]->description;
-                            for ($x = 0; $x < $count; $x++) {
-                                echo '<i class="icon-star text-color-beta"></i>';
-                            }
-                        ?>
-                    </span>
-                    <?php endif; ?>
-
+					<?php
+					$hotel_category_degrees = wore_get_hotel_degree_categories($hotel);
+					if(!empty($hotel_category_degrees)): 
+						foreach($hotel_category_degrees as $hotel_category_degree):
+						?>  
+						<span class="hotel-category-degree position-absolute bottom-0 end-0 me-2 lead fs-4">
+							<?php
+								$count = (int)$hotel_category_degree['degree'];
+								for ($x = 0; $x < $count; $x++) {
+									echo '<i class="icon-star text-color-beta"></i>';
+								}   
+							?>  
+						</span>
+						<?php
+						endforeach;
+					endif; 
+					?>  
                 </div>
 
                 <!-- Button -->
