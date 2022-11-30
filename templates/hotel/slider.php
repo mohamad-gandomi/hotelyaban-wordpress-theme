@@ -17,25 +17,25 @@
 	</address>
 
 	<div class="col-md-6 text-md-start">
-	<span class="bottom-0 fs-4">
-		<?php
-		$hotel_category_degrees = wore_get_hotel_degree_categories($hotel);
-		if(!empty($hotel_category_degrees)): 
-			foreach($hotel_category_degrees as $hotel_category_degree):
-			?>  
-			<span class="hotel-category-degree position-absolute bottom-0 end-0 me-2 lead fs-4">
-				<?php
-					$count = (int)$hotel_category_degree['degree'];
-					for ($x = 0; $x < $count; $x++) {
-										echo '<i class="icon-star text-color-beta"></i>';
-													}   
-							?>  
-			</span>
-			<?php
-			endforeach;
-		endif; 
-		?>  
-	</span>
+		<span class="bottom-0 fs-4">
+
+			<!-- Hotel Star Classification -->
+			<?php 
+				$hotel_categories = $hotel->get_hotel_categories();
+				if ($hotel_categories) {
+					foreach ( $hotel_categories as $hotel_category ) {
+						$category_type = $hotel_category->get_data('type');
+						if ( 'degree' == $category_type ) {
+							$count = $hotel_category->get_data('degree');
+							for ($x = 0; $x < $count; $x++) {
+								echo '<i class="icon-star text-color-beta"></i>';
+							}
+						}
+					}
+				}
+			?>
+
+		</span>
 	</div>
 
 </div>
