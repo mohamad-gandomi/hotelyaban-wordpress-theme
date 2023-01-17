@@ -119,4 +119,14 @@ add_action( 'widgets_init', function() {
 		'after_title'   => '</h6>',
 	));
 
+	register_sidebar( array(
+		'name'          => 'Copy Right Social Icons',
+		'id'            => 'copy_right_social_icons',
+		'description'   => 'Add social icon to copy right footer section',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h6>',
+		'after_title'   => '</h6>',
+	));
+
 });

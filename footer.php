@@ -30,11 +30,7 @@
             <div class="py-3 row">
                 <div class="align-items-center col-12 col-md-6 d-flex my-2 my-md-0 text-center text-md-end"> <span class="copy-right">تمامی حقوق مادی و معنوی محفوظ و متعلق به هتل یابان می باشد.</span> </div>
                 <div class="col-12 col-md-6 my-2 my-md-0 text-center text-md-start">
-                    <ul class="list-unstyled mb-0">
-                        <li class="list-inline-item list-unstyled pe-1 pe-sm-4"> <a class="text-decoration-none text-reset" href="#">درباره ما</a> </li>
-                        <li class="list-inline-item list-unstyled pe-1 pe-sm-4"> <a class="text-decoration-none text-reset" href="#">تماس با ما</a> </li>
-                        <li class="list-inline-item list-unstyled pe-1 pe-sm-4"> <a class="text-decoration-none text-reset" href="#">پرسش و پاسخ متداول</a> </li>
-                    </ul>
+                    <?php dynamic_sidebar( 'copy_right_social_icons' ); ?>
                 </div>
             </div>
         </div>
