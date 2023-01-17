@@ -2,9 +2,6 @@
 <header class="row">
 	<h1 class="fs-4">
 		<?php echo $hotel->get_name(); ?>
-		<span class="text-color-beta">
-			<?php echo has_term('uncategorized', 'product_cat') ? '' : $city->get_data('name') ;  ?>
-		</span>
 	</h1>
 </header>
 

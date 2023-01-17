@@ -45,7 +45,7 @@
 		<div class="col-12 col-xl-6 overflow-hidden">
 
 			<!--title-->
-			<h2 class="fs-5 mb-4">مکان هتل <span class="text-color-omega">دایان مشهد بر روی نقشه</span></h2>
+			<h2 class="fs-5 mb-4">مکان هتل <span class="text-color-omega"><?php echo $hotel->get_name(); ?> بر روی نقشه</span></h2>
 
 			<div id="map" class="map-embed z-depth-1-half map-container h-100" style="min-height:400px"></div>
 

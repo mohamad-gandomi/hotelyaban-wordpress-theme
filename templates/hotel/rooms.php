@@ -1,7 +1,7 @@
 <!-- Rooms -->
 <section class="mb-5">
 
-	<h2 class="fs-5 mb-4">اتاق‌های <?php echo $hotel->get_name(); ?> <span class="text-color-beta"><?php echo has_term('uncategorized', 'product_cat') ? '' : $city->get_data('name') ;  ?></span></h2>
+	<h2 class="fs-5 mb-4">اتاق‌های <?php echo $hotel->get_name(); ?> </h2>
 
 	<div class="row">
 		<?php 

@@ -5,12 +5,12 @@
 
 	<!-- Title -->
 	<header>
-	<h2 class="fs-4 mb-3">معرفی <?php echo $hotel->get_name(); ?> <span class="text-color-beta"><?php echo $city->get_data('name') ?></span></h2>
+	<h2 class="fs-4 mb-3">معرفی <?php echo $hotel->get_name(); ?> </h2>
 	</header>
 
-	<div class="hotel-description mb-3"><?php echo substr( $hotel->get_description(), 0, $pos ); ?></div>
+	<div class="text-justify hotel-description mb-3"><?php echo substr( $hotel->get_description(), 0, $pos ); ?></div>
 
-	<div id="description" class="collapse mb-3"><?php echo substr( $hotel->get_description(), $pos ); ?></div>
+	<div id="description" class="text-justify collapse mb-3"><?php echo substr( $hotel->get_description(), $pos ); ?></div>
 
 	<button class="btn btn-primary bg-color-eta border-0 py-2 fs-6 d-flex justify-content-center" type="button" data-bs-toggle="collapse" data-bs-target="#description" aria-expanded="false" aria-controls="description">
 	<span class="text-black">نمایش همه</span>

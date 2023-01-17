@@ -54,9 +54,9 @@
 
 									<!-- Hotel Picture -->
 									<?php if($hotel->get_image_id()): ?>
-										<img src="<?php echo wp_get_attachment_url($hotel->get_image_id()); ?>" class="card-img-top" alt="">
+										<img src="<?php echo wp_get_attachment_url($hotel->get_image_id()); ?>" class="card-img-top" alt="<?php echo get_post_meta($hotel->get_image_id(), '_wp_attachment_image_alt', TRUE); ?>">
 									<?php else: ?>
-										<img src="<?php echo get_template_directory_uri()  ?>/assets/img/hotel_picture.jpg" class="card-img-top" alt="">
+										<img src="<?php echo get_template_directory_uri()  ?>/assets/img/hotel_picture.jpg" class="card-img-top" alt="تصویر هتل">
 									<?php endif; ?>
 
 									<!-- Hotel Star Classification -->
@@ -97,6 +97,11 @@
 									<p class="card-text text-color-beta">
 										<i class="icon-bolt ms-1"></i>
 										<small> شروع قیمت از <?php echo number_format($hotel->get_meta('price_start')); ?> تومان / شب</small>
+									</p>
+									<?php else: ?>
+									<p class="card-text text-color-beta">
+										<i class="icon-bolt ms-1"></i>
+										<small> شروع قیمت از - تومان / شب</small>
 									</p>
 									<?php endif; ?>
 

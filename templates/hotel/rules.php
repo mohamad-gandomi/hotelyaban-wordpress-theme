@@ -3,7 +3,7 @@
 
 	<!-- Title -->
 	<header>
-	<h2 class="fs-4 mb-3">قوانین <?php echo $hotel->get_name(); ?> <span class="text-color-beta"><?php echo has_term('uncategorized', 'product_cat') ? '' : $city->get_data('name') ;  ?></span></h2>
+	<h2 class="fs-4 mb-3">قوانین <?php echo $hotel->get_name(); ?> </h2>
 	</header>
 
 	<div class="row mb-4">
