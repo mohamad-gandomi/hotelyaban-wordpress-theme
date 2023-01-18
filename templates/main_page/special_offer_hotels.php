@@ -80,7 +80,7 @@
 
 								<!-- Button -->
 								<div class="d-flex justify-content-center card__button">
-									<a href="<?php echo get_home_url() . '/product/' . $hotel->get_slug(); ?>" class="btn btn-color-beta text-light">مشاهده</a>
+									<a href="<?php echo  get_the_permalink($hotel->get_id()); ?>" class="btn btn-color-beta text-light">مشاهده</a>
 								</div>
 								
 								<!-- Card Body -->

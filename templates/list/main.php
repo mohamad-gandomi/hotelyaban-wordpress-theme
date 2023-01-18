@@ -54,7 +54,7 @@
 
 						<!-- Button -->
 						<div class="d-flex justify-content-center card__button">
-							<a href="<?php echo get_home_url() . '/product/' . $hotel->get_slug(); ?>" class="btn btn-color-beta text-light">مشاهده</a>
+							<a href="<?php echo  get_the_permalink($hotel->get_id()); ?>" class="btn btn-color-beta text-light">مشاهده</a>
 						</div>
 						
 						<!-- Card Body -->
@@ -64,7 +64,7 @@
 							<h5 class="card-title"><?php echo $hotel->get_name() ? $hotel->get_name() : ''; ?></h5>
 
 							<!-- Hotel Address -->
-							<p class="card-text mb-0 text-truncate"><i class="icon-location_on ms-1"></i><small><?php echo $hotel->get_meta('address') ? $hotel->get_meta('address') : '' ; ?></small></p>
+							<p class="card-text mb-0 text-truncate" style="text-overflow: ellipsis;overflow: hidden;white-space: nowrap;" ><i class="icon-location_on ms-1"></i><small><?php echo $hotel->get_meta('address') ? $hotel->get_meta('address') : '' ; ?></small></p>
 
 							<!-- Hotel Price -->
 							<?php if($hotel->get_meta('price_start')): ?>
@@ -89,5 +89,5 @@
 		<?php endif; ?>
 	</div>
 
-	<button id="load_more_btn" data-term="<?php echo get_queried_object()->term_id; ?>" data-page="1">اطلاعات بیشتر</button>
+	<div class="text-center my-3"><button id="load_more_btn" class="btn btn-color-beta shadow-sm text-light" data-term="<?php echo get_queried_object()->term_id; ?>" data-page="1">اطلاعات بیشتر</button></div>
 </main>

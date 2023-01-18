@@ -71,7 +71,7 @@ function load_more_callback() {
 
                 <!-- Button -->
                 <div class="d-flex justify-content-center card__button">
-                    <a href="<?php echo get_home_url() . '/product/' . $hotel->get_slug(); ?>" class="btn btn-color-beta text-light">مشاهده</a>
+                    <a href="<?php echo  get_the_permalink($hotel->get_id()); ?>" class="btn btn-color-beta text-light">مشاهده</a>
                 </div>
                 
                 <!-- Card Body -->
@@ -81,7 +81,7 @@ function load_more_callback() {
                     <h5 class="card-title"><?php echo $hotel->get_name() ? $hotel->get_name() : ''; ?></h5>
 
                     <!-- Hotel Address -->
-                    <p class="card-text mb-0 text-truncate"><i class="icon-location_on ms-1"></i><small><?php echo $hotel->get_meta('address') ? $hotel->get_meta('address') : '' ; ?></small></p>
+                    <p class="card-text mb-0 text-truncate" style="text-overflow: ellipsis;overflow: hidden;white-space: nowrap;" ><i class="icon-location_on ms-1"></i><small><?php echo $hotel->get_meta('address') ? $hotel->get_meta('address') : '' ; ?></small></p>
 
                     <!-- Hotel Price -->
                     <?php if($hotel->get_meta('price_start')): ?>
