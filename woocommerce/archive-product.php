@@ -8,6 +8,7 @@
       <div class="row">
 		<?php include get_template_directory() . '/templates/list/filters.php'; ?>
 		<?php include get_template_directory() . '/templates/list/main.php'; ?>
+    <?php include get_template_directory() . '/templates/list/description.php'; ?>
       </div>
     </div>
   </section>
