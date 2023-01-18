@@ -4,7 +4,7 @@
 	<?php dynamic_sidebar('Wore Sort'); ?>
 
 	<!--List-->
-	<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 justify-content-center p-4">
+	<div id="listContainer" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 justify-content-center p-4">
 		<?php if ( have_posts() ) : ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php $hotel = wore_get_hotel(get_the_id()); ?>

@@ -9,7 +9,7 @@ function load_more_callback() {
     $page_number = $_POST['page_number'] + 1;
 	$args = array(
 		'post_type'	=>	'product',
-		'posts_per_page' => 5,
+		'posts_per_page' => 6,
 		'paged' => $page_number,
 		'tax_query'  => array(
 			array(
@@ -98,7 +98,7 @@ function load_more_callback() {
         <?php
 	}
  	wp_reset_postdata();
-    wp_die();
+	wp_die();
 }
 add_action( 'wp_ajax_load_more',        'load_more_callback' );
 add_action( 'wp_ajax_nopriv_load_more', 'load_more_callback' );
@@ -107,5 +107,10 @@ add_action( 'wp_ajax_nopriv_load_more', 'load_more_callback' );
 /**
  * Limit displayed products on Woocommerce product category archives
  */
-function product_pagination_by_category() { if( is_product_category() ) $limit = 2; return $limit; }
+function product_pagination_by_category() {
+	if( is_product_category() ){
+		$per_page = get_option('posts_per_page');
+		return $per_page;
+	} 
+}
 add_filter( 'loop_shop_per_page', 'product_pagination_by_category');
